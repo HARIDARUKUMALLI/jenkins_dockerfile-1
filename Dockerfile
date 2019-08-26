@@ -20,7 +20,7 @@ RUN groupadd -g 497 docker && \
     usermod -a -G docker jenkins
 
 # Install the docker client
-RUN apt-get install -y docker
+RUN curl -sSL https://get.docker.com/ | sh
 
 # Jenkins home directoy is a volume, so configuration and build history 
 # can be persisted and survive image upgrades
