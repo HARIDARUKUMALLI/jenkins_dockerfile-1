@@ -11,7 +11,8 @@ RUN pip3 install --upgrade pip
 ENV JENKINS_HOME /var/jenkins_home
 
 # add user jenkins 
-RUN useradd -d "$JENKINS_HOME" -u 102 -m -s /bin/bash jenkins 
+# this image already has user jenkins
+# RUN useradd -d "$JENKINS_HOME" -u 102 -m -s /bin/bash jenkins 
 
 # Create docker group with gid = 497 and add jenkins to the group
 # This will allow the jenkins user to run docker commands
